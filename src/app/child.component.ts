@@ -1,10 +1,13 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
+
 @Component({
     selector: 'child-comp',
-    template: `<ng-content></ng-content><h2>Добро пожаловать, {{name}}</h2>`,
-    styles: [`h2,p{color:red}`]
+    template: `<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+    </mat-menu>`
 })
-
-export class ChildComponent{
-    name='Алексей';
+export class ChildComponent {
+    name= "Евгений";
 }
